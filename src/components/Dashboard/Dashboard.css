@@ -1,0 +1,105 @@
+.dashboard-container {
+  padding: 20px;
+}
+
+.metrics {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.metric-card {
+  background-color: hsl(180, 97%, 13%);
+  color: #64fcfc;
+  padding: 20px;
+  flex: 1;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.metric-card span {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+
+.charts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.chart-card {
+  background-color: #062c30;
+  padding: 20px; /* Ensures proper spacing inside the card */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 400px;
+  overflow: hidden; /* Prevents content from overflowing */
+  position: relative; /* Allows better positioning of elements within */
+}
+
+
+.chart-card.wide {
+  grid-column: span 2; /* Double the width for wide charts */
+  height: 450px; /* Slightly increase height for wider charts */
+}
+
+.chart-card h3 {
+  color: #f0e800;
+  margin-bottom: 15px;
+  text-align: center; /* Center align the titles */
+}
+
+.chart-card canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+
+
+.top-students {
+  background-color: #062c30;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 20px;
+  color: #E0FFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers all content in the container */
+}
+
+
+.top-students table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.top-students th,
+.top-students td {
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #00a0a0;
+}
+
+.top-students th {
+  background-color: #05423c;
+  color: #fff702;
+}
+
+.top-students td {
+  color: #e0ffff;
+}
+
+.top-students tr:nth-child(even) {
+  background-color: #014242;
+}

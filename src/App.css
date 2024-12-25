@@ -1,0 +1,472 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.App {
+  display: flex;
+  background-color: #062c30; /* Darker green background */
+  min-height: 100vh;
+}
+
+.page-header {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #d7f7fc;
+  margin-bottom: 20px;
+  padding-left: 10px;
+}
+
+
+/* Header Section Styling */
+.header-section {
+  text-align: center; /* Center the header text */
+  margin-bottom: 20px; /* Space between header and buttons */
+}
+
+.main-header {
+  font-size: 2rem; /* Larger font for the header */
+  font-weight: bold; /* Make the header bold */
+  color: #d7f7fc; /* Tron Orange */
+  margin-bottom: 10px; /* Add spacing below the header */
+}
+
+/* Start of Sidebar Styling */
+.sidebar {
+  flex: 0 0 80px; /* Collapsed width */
+  background-color: #0a2f30;
+  color: #ffa500;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.6s ease; /* Smooth and slower transition */
+  overflow: hidden;
+}
+
+.sidebar:hover {
+  flex: 0 0 220px; /* Expanded width */
+}
+
+
+.sidebar-tab {
+  display: flex;
+  align-items: center;
+  font-size: 0; /* Hide text */
+  color: #ffffff;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: left;
+  border-radius: 5px;
+  transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+.sidebar-tab:hover {
+  background-color: #ffa500; /* Highlight on hover */
+  color: #062c30; /* Dark green text color */
+  font-weight: bold;
+}
+
+.sidebar:hover .sidebar-tab {
+  font-size: 1rem; /* Show text */
+  padding-left: 10px;
+}
+
+.sidebar-tab.active {
+  background-color: #ffa500; /* Active tab color */
+  color: #062c30; /* Match main content */
+  font-weight: bold;
+}
+
+.sidebar-tab-icon {
+  margin-right: 8px; /* Space for icon */
+  font-size: 1.5rem;
+}
+
+/*Sidebar End*/
+
+/* Main Content Styling */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #0a393d;
+  color: #ffffff;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center; /* Center the buttons */
+  gap: 10px; /* Add spacing between buttons */
+  margin-bottom: 20px; /* Add spacing below buttons */
+}
+
+.add-data-trigger,
+.upload-csv-trigger {
+  background-color: #FFA500;
+  color: #002B2B;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-data-trigger:hover,
+.upload-csv-trigger:hover {
+  background-color: #FF4500; /* Darker orange for hover */
+}
+
+/* Container for all filters */
+.search-filter-container {
+  display: flex; /* Arrange items in a row */
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  gap: 15px; /* Space between elements */
+  align-items: center; /* Vertically align items */
+  margin-bottom: 20px;
+}
+
+/* Search input container */
+.search-data-container {
+  position: relative;
+  flex: 1; /* Allow search bar to grow */
+  min-width: 200px; /* Minimum size */
+}
+
+.search-data-field {
+  width: 100%;
+  padding: 10px 40px; /* Space for the icon */
+  font-size: 1rem;
+  border: 1px solid #00A0A0;
+  border-radius: 10px;
+  background-color: #003C3C;
+  color: #E0FFFF;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.search-data-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: #ffa500;
+  font-size: 1.2rem;
+  pointer-events: none;
+}
+
+/* Location filter */
+.location-filter {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #00A0A0;
+  border-radius: 10px;
+  background-color: #003C3C;
+  color: #E0FFFF;
+  outline: none;
+  cursor: pointer;
+  min-width: 180px; /* Ensure consistent size */
+  max-height: 45px; /* Allow scrolling for multiple options */
+  overflow-y: auto;
+}
+
+/* Date filter container */
+.location-filter-container {
+  display: flex;
+  gap: 10px; /* Space between date fields */
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+/* Date filter container */
+.date-filter-container {
+  display: flex;
+  gap: 10px; /* Space between date fields */
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.date-filter-container label {
+  color: #E0FFFF;
+  font-size: 0.9rem;
+  margin-right: 5px;
+}
+
+.date-filter-input {
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #00A0A0;
+  border-radius: 10px;
+  background-color: #003C3C;
+  color: #E0FFFF;
+  outline: none;
+  width: 150px; /* Fixed width */
+  box-sizing: border-box;
+}
+
+.date-filter-input:focus {
+  border-color: #ffa500;
+  box-shadow: 0 0 8px #ffa500;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #004F4F; /* Match background color */
+  border-radius: 10px;
+  overflow: hidden; /* Prevent overflowing elements */
+}
+
+th,
+td {
+  padding: 15px;
+  text-align: left;
+  border: 1px solid #00A0A0; /* Match teal border */
+  color: #E0FFFF;
+}
+
+th {
+  background-color: #006666; /* Slightly darker teal for headers */
+}
+
+tr:nth-child(even) {
+  background-color: #003C3C; /* Alternate row color */
+}
+
+/* Action Buttons in Table */
+.data-list-button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-right: 5px; /* Spacing between action buttons */
+}
+
+.data-list-button.edit {
+  background-color: #4caf50; /* Green for edit */
+  color: #ffffff;
+}
+
+.data-list-button.edit:hover {
+  background-color: #43a047;
+}
+
+.data-list-button.delete {
+  background-color: #f44336; /* Red for delete */
+  color: #ffffff;
+}
+
+.data-list-button.delete:hover {
+  background-color: #e53935;
+}
+
+/* Pagination Styling */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination-button {
+  background-color: #FFA500;
+  color: #002B2B;
+  padding: 10px;
+  margin: 0 10px; /* Spacing between pagination buttons */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination-button:hover {
+  background-color: #FF4500;
+}
+
+.pagination-button.active {
+  background-color: #FF4500;
+  color: #FFFFFF;
+}
+
+/* General Modal Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: #004F4F;
+  color: #E0FFFF;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  width: 400px;
+  max-width: 90%;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-header h2 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: #FFA500;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+
+.add-data-form button {
+  display: block;
+  margin: 0 auto; /* Center the Add Data button */
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #FFA500;
+  color: #004F4F;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-data-form button:hover {
+  background-color: #FF4500;
+}
+
+/* Add Data and Edit Data Modal Styles */
+.add-data-form input, 
+.edit-data-form input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #00A0A0; /* Teal border */
+  border-radius: 5px;
+  background-color: #003C3C;
+  color: #E0FFFF;
+  margin-bottom: 10px;
+  width: 100%; /* Ensures consistent width for all fields */
+}
+
+/*Edit Modal*/
+
+.modal-edit {
+  background-color: #004F4F; /* Match sidebar color scheme */
+  color: #E0FFFF; /* Text color */
+  padding: 20px;
+  border-radius: 10px; /* Smooth borders */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Slight shadow for depth */
+  width: 400px; /* Modal width */
+  max-width: 90%; /* Responsive width */
+  animation: fadeIn 0.3s ease-in-out; /* Smooth appearance */
+}
+
+.modal-edit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-edit-header h2 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.modal-edit-close {
+  background: none;
+  border: none;
+  color: #FFA500; /* Orange close button */
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Space between buttons */
+  margin-top: 20px;
+}
+
+.modal-footer button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #FFA500; /* Orange for buttons */
+  color: #004F4F; /* Match sidebar */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.modal-footer button:hover {
+  background-color: #FF4500; /* Darker orange for hover */
+}
+
+
+.edit-data-form button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #FFA500; /* Orange for button */
+  color: #004F4F; /* Match sidebar */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-right: 10px;
+}
+
+.edit-data-form button:hover {
+  background-color: #FF4500; /* Darker orange for hover */
+}
+/*End of Edit Modal*/
+
+/* Delete Confirmation Modal */
+.delete-confirmation-modal h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #E0FFFF;
+  margin-bottom: 10px;
+}
+
+.delete-confirmation-modal p {
+  font-size: 0.9rem;
+  text-align: center;
+  color: #A0A0A0;
+  margin-bottom: 20px;
+}
+
+/* End of Delete Confirmation Modal */

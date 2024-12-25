@@ -1,0 +1,264 @@
+.filter-section {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.filter-section label {
+  font-weight: bold;
+}
+
+.filter-section select {
+  width: 200px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.insights-container {
+    padding: 20px;
+    color: #d4f4f4;
+  }
+  
+  .tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .tab-button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background: transparent;
+    border: none;
+    color: #f0e800;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .tab-button.active {
+    color: #00A0A0;
+    border-bottom: 3px solid #00A0A0;
+  }
+  
+  .section {
+    display: none; /* Hide sections by default */
+  }
+  
+  .section.active {
+    display: block; /* Only display the active section */
+  }
+  
+  .chart-card {
+    background-color: #062c30;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    overflow: hidden; /* Keeps the canvas within the card */
+  }
+  
+  .chart-card h3 {
+    color: #f0e800;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  
+  .chart-card canvas {
+    width: auto !important; /* Adjust width automatically to prevent stretching */
+    height: 300px !important; /* Fixed height for consistency */
+  }
+  
+    /* Location filter */
+  .location-filter {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #00A0A0;
+    border-radius: 10px;
+    background-color: #003C3C;
+    color: #E0FFFF;
+    outline: none;
+    cursor: pointer;
+    min-width: 180px; /* Ensure consistent size */
+    max-height: 45px; /* Allow scrolling for multiple options */
+    overflow-y: auto;
+  }
+
+    /* Filter Section */
+  .filter-container {
+    display: flex;
+    gap: 10px; /* Space between filter fields */
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px; /* Added spacing below the filter section */
+  }
+
+  /* Labels */
+  .filter-section label {
+    font-weight: bold;
+    color: #f0e800; /* Consistent with the application text color */
+  }
+
+  /* Select Box */
+  .filter-section select {
+    width: 200px;
+    padding: 0.5rem;
+    border: 1px solid #00A0A0;
+    border-radius: 5px;
+    background-color: #062c30;
+    color: #f0e800;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .filter-section select:hover,
+  .filter-section select:focus {
+    border-color: #00FFD1; /* Highlight border on hover/focus */
+    box-shadow: 0 0 5px #00FFD1;
+  }
+
+  /* Reset Button */
+  .reset-button {
+    padding: 0.5rem 1rem;
+    background-color: #00A0A0; /* Teal accent */
+    color: #062c30; /* Dark contrast text */
+    border: 1px solid #00A0A0;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .reset-button:hover {
+    background-color: #00FFD1; /* Brighter teal on hover */
+    color: #062c30;
+  }
+
+  /* Spacing Between Filter and Chart */
+  .chart-card {
+    margin-top: 20px; /* Additional space between the filter and the chart */
+    background-color: #062c30;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+
+  /* Chart Title */
+  .chart-card h3 {
+    color: #f0e800;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+
+    /* Select Box Styling */
+  .filter-container select {
+    width: 200px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background-color: #062c30; /* Matches the dark theme */
+    color: #f0e800; /* Yellow text for readability */
+    border: 1px solid #00A0A0; /* Teal border */
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+
+  .filter-container select:hover,
+  .filter-container select:focus {
+    border-color: #00FFD1; /* Brighter teal highlight on hover/focus */
+    box-shadow: 0 0 5px #00FFD1;
+  }
+
+  /* Dropdown Options */
+  .filter-container select option {
+    background-color: #062c30; /* Dark background for dropdown options */
+    color: #f0e800; /* Yellow text for options */
+    padding: 0.5rem;
+  }
+
+  /* Reset Button Styling */
+  .reset-button {
+    padding: 0.5rem 1rem;
+    background-color: #00A0A0; /* Teal background */
+    color: #062c30; /* Dark text for contrast */
+    border: 1px solid #00A0A0;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .reset-button:hover {
+    background-color: #00FFD1; /* Brighter teal on hover */
+    color: #062c30;
+  }
+
+  /* Filter Container Spacing */
+  .filter-container {
+    display: flex;
+    gap: 10px; /* Space between filter components */
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px; /* Space between filter and chart */
+  }
+
+  /* Month filter styling */
+  .month-filter {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #00A0A0;
+  border-radius: 10px;
+  background-color: #003C3C; /* Matches dark theme */
+  color: #E0FFFF; /* Light text for readability */
+  outline: none;
+  cursor: pointer;
+  min-width: 180px; /* Consistent size */
+  max-height: 45px; /* Matches location filter height */
+  overflow-y: auto; /* Adds scroll if needed */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .month-filter:hover,
+  .month-filter:focus {
+  border-color: #00FFD1; /* Brighter teal on hover/focus */
+  box-shadow: 0 0 5px #00FFD1;
+  }
+
+  /* Dropdown options for month filter */
+  .month-filter option {
+  background-color: #003C3C; /* Dark background */
+  color: #E0FFFF; /* Light text */
+  padding: 0.5rem;
+  }
+
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .tabs {
+      flex-direction: column;
+    }
+  
+    .tab-button {
+      width: 100%; /* Full width tabs on smaller screens */
+      text-align: center;
+    }
+  }
+  
